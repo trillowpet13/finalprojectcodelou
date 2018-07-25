@@ -1,122 +1,212 @@
-html {
-    background-color: whitesmoke;
+* {box-sizing: border-box;}
+
+body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
 }
 
-h1 {
-    margin-top: 47px;
-    color: whitesmoke;
-    font-size: 50px;
-    padding-top: 75px;
-    text-align: ;
-    
-    
-    
-} 
-
-h2, h3, h4, h5, h6 {
-    color: #FF8080;
-    font-weight: 600;
-    line-height: 1.3em;
-    font-size: 30px
-}
-
-h2 {
-    margin-top: 1.3em;
-}
-
-p {
-    color: #FF8080;
-    padding: 20px;
-
-}
-
-ul {
-    list-style-type: none;
-    margin: auto;
-    padding: 0;
-    overflow: hidden;
-    background-color: white;
-    border-bottom: 1px solid #e7e7e7;
-    position: fixed;
-    top: 0;
-    width: 100%; 
-    
-}
-
-li {
-    float: left;
-
-}
-
-li a {
-    display: block;
-    color: #FF8080;
+/* Header Title */
+.header {
+    padding: 30px;
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    
+    background: red;
+    background: linear-gradient(15deg, red, yellow);
+    color: whitesmoke;
 }
 
-li a:hover:not(.active) {
-    background-color: #FF8080;
-    color: white;
+.header h1 {
+    font-size: 50px;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: whitesmoke;   
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-bottom: 1px #ff8080;
+}
+
+.topnav a:hover {
+    background-color: red;
+    color: #fff;
 }
 
 .active {
     background-color: lightgrey; 
 }
 
-.bodycontent {
-    background-color: white;
+#maincolumn {
     margin: auto;
-    width: 80%;
-    padding: 20px;
-    margin-bottom: 35px;
-    box-shadow: 0px 0px 30px rgba(255, 128, 128, .4);
-    
-    
-}
-.container {
-    background-color: #FF8080;
+    width: 75%;
 }
 
-.footer {
-    background-color: #FF8080;
-    text-align: center;
-    color: white;
-    padding: 15px;
-}
-
-.gallery {
-    margin: 15px;
-    border: 1px solid #ccc;
+/* right column */
+.rightcolumn {   
     float: left;
-    width: 180px;
-    
+    width: 25%;
 }
 
-.gallery:hover {
-    border: 1px solid #FF8080;
+.expand-aboutme {
+    cursor: pointer;
+}
+#show-aboutme {
+    display: none;
 }
 
-.gallery img {
+.aboutme {
+    border-radius: 50%;
+    max-width: 100%;
+    height: auto; 
+}
+
+.animate-fix {
     width: 100%;
-    height: auto;
+    float: left;
 }
 
-.desc {
-    padding: 15px;
-    text-align: center;
+.aboutme:hover {
+    opacity: 0.7;
 }
 
-.gallerycontent {
+.clean {
+    clear:both;
+}
+
+/* Social Media Buttons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 55px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* left column */
+.leftcolumn {
+    float: left;
+    width: 75%;
+    background-color: #f1f1f1;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
     background-color: white;
-    margin: auto;
-    width: 80%;
     padding: 20px;
-    padding-bottom: 500px;
-    margin-bottom: 35px;
-    box-shadow: 0px 0px 30px rgba(255, 128, 128, .4);
-    * {
-    box-sizing: border-box;
+    margin-top: 20px;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, .35);
+    width: auto;
+}
+
+.card h2 {
+    color: red;
+}
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: red;
+    background: linear-gradient(-15deg, red, yellow);
+    margin-top: 20px;
+    color: whitesmoke;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn, #maincolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .topnav a  {
+        float: none;
+        width: 100%;
+    }
+}
+
+.row2 {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
 }
